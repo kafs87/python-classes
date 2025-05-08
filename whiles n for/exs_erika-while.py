@@ -81,12 +81,12 @@ while (valor != 100):
     if valor == 100:
         break
 
-if contador > 0:
+if contador_para_media > 0:
     media_ex4 = somatoria / contador_para_media
-    print(f"Números acima de 80: ")
-    print(f"Números abaixo de 10: ")
+    print(f"Números acima de 80: {acima_de_80}")
+    print(f"Números abaixo de 10: {abaixo_de_10}")
     print(f"A soma dos números é: {somatoria}")
-    print(f"A média dos números é: {media_ex4}")
+    print(f"A média dos números é: {media_ex4:.2f}")
 else:
     print("Nenhum valor válido foi inserido.")
 
