@@ -37,26 +37,58 @@ while (num_digitado >= 1 and num_digitado <= 7):
     num_digitado = int(input("Digite um novo número de 1 a 7: "))
 print("Número inválido.")
 
-
-
 # Exercício 03 - Elaborar um programa que deve ler N números. Caso o usuário digite zero (0), o programa deve exibir a somatória e a média dos valores inseridos.
 
 print('\n========== EXERCICIO 03 ==========')
 
-num = int(input("Digite um número: "))
+soma_dos_numeros = 0
+contador = 0
+num_ex3 = int(input("Digite um número: "))
 
-while (num != 0):
-    novo_num = int(input("Digite outro número ou 0 para calcular: "))
+while (num_ex3 != 0):
+    soma_dos_numeros += num_ex3
+    contador += 1
+    num_ex3 = int(input("Digite outro número ou 0 para calcular: "))
+    if num_ex3 == 0:
+        break
 
-if num == 0:
-    
-
+if contador > 0:
+    media = soma_dos_numeros / contador
+    print(f"A soma dos números é: {soma_dos_numeros}")
+    print(f"A média dos números é: {media}")
+else:
+    print("Nenhum número válido foi inserido.")
 
 # Exercício 04 - Elaborar um programa que solicite ao usuário vários valores inteiros. Quando o usuário digitar o número 100 o programa deve terminar, mostrando quantos valores foram acima de 80, quantos foram abaixo de 10 e mostrar a média de todos os valores digitados pelo usuário
 
 print('\n========== EXERCICIO 04 ==========')
 
+acima_de_80 = 0
+abaixo_de_10 = 0
+somatoria = 0
+contador_para_media = 0
+valor = int(input("Digite um valor: "))
 
+while (valor != 100):
+    if (valor >= 80):
+        acima_de_80 += 1
+    elif (valor <= 10):
+        abaixo_de_10 += 1
+
+    somatoria += valor
+    contador_para_media += 1
+    valor = int(input("Digite outro valor ou 100 para calcular: "))
+    if valor == 100:
+        break
+
+if contador > 0:
+    media_ex4 = somatoria / contador_para_media
+    print(f"Números acima de 80: ")
+    print(f"Números abaixo de 10: ")
+    print(f"A soma dos números é: {somatoria}")
+    print(f"A média dos números é: {media_ex4}")
+else:
+    print("Nenhum valor válido foi inserido.")
 
 # Exercício 05 - Elaborar um programa que lê um número N inteiro maior que 2 (caso N não for maior que 2 deve solicitar outro número). Logo após o programa deve exibir o quadrado e o cubo de 2 até N.
 
