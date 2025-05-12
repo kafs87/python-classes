@@ -1,18 +1,16 @@
-# Funções e Procedimentos - Ex 3:
-# Função construída
+# Funções e Procedimentos - Ex 6:
+# Cálculo de raiz quadrada, dobro e triplo
 
+# Procedimento 
+def titulo_do_sistema():
+    print('\n\n*** Cálculos - Cubo / Quadrado / Triplo ***')
+
+# Declaração / Construção da Função
 def quadrado(parametro_num):
     return (parametro_num * parametro_num)
 
-# Jeito "errado"
-print("\n\nCálculos")
-num = int(input("Digite um número: "))
-quad = quadrado(num)
-print(f"A raiz quadrada do número ({num}) é {quad}")
+def dobro(parametro_num):
+    return (parametro_num * 2)
 
-# Jeito certo
-num = int(input("Digite um segundo número: "))
-print(f"A raiz quadrada do segundo número ({num}) é {quadrado(num)}")
-
-num = int(input("Digite um segundo número: "))
-print(f"A raiz quadrada do segundo número ({num}) é {quadrado(num)}")
+def triplo(parametro_num):
+    return (parametro_num * 3)

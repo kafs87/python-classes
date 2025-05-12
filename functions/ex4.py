@@ -1,10 +1,15 @@
-# Funções e Procedimentos - Ex 1:
-# Função já existente - pré definidas: Exponencial
+# Funções e Procedimentos - Ex 4:
+# Cálculo de raiz quadrada, dobro e triplo
+# Função construída
 
-# Importação de uma biblioteca com funções/procedimentos já existentes.
-import math 
+import ex6
 
-print("\n\nCálculo Exponencial")
-num = int(input("Digite um número: "))
-exponencial = math.exp(num)
-print(f"O exponecial do número {num} é {exponencial:.2f}")
+# Início 
+ex6.titulo_do_sistema() # Título
+
+num = int(input("Digite um número: ")) # Entrada
+
+# Sáida e Processamento
+print(f"A raiz quadrada do número ({num}) é {ex6.quadrado(num)}") 
+print(f"O dobro do número ({num}) é {ex6.dobro(num)}")
+print(f"O triplo do número ({num}) é {ex6.triplo(num)}")

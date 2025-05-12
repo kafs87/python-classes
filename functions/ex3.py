@@ -1,26 +1,19 @@
-# Programa de Verificação do Cargo
-# 07/04/2025
+# Funções e Procedimentos - Ex 3:
+#   Cálculo de raiz quadrada
+# Função construída
 
-print('\nPrograma de Verificação do Cargo\n')
-nome = input('Insira seu nome: ')
-cod = int(input('Digite o código do cargo: '))
+def quadrado(parametro_num):
+    return (parametro_num * parametro_num)
 
-if cod == 1:
-    cod_s = 'Escriturário'
-elif cod == 2:
-    cod_s = 'Secretária'
-elif cod == 3:
-    cod_s = 'Caixa'
-elif cod == 4:
-    cod_s = 'Gerente'
-elif cod == 5:
-    cod_s = 'Diretor'
-elif cod == 6:
-    cod_s = 'Diretor'
-else:
-    cod_s = 'Inválido'
+# Jeito "errado"
+print("\n\nCálculos")
+num = int(input("Digite um número: "))
+quad = quadrado(num)
+print(f"A raiz quadrada do número ({num}) é {quad}")
 
-if cod_s != "Inválido":
-    print(f'\n\n{nome}, de acordo com seu código de cargo {cod}, a descrição do seu cargo é {cod_s}.')
-else: 
-    print('Código inválida!')
+# Jeito certo
+num = int(input("Digite um segundo número: "))
+print(f"A raiz quadrada do segundo número ({num}) é {quadrado(num)}")
+
+num = int(input("Digite um segundo número: "))
+print(f"A raiz quadrada do segundo número ({num}) é {quadrado(num)}")
