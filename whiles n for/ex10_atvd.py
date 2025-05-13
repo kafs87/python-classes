@@ -1,7 +1,9 @@
 # Estrutura de Repetição - While
 # Programa de cálculo de média bimestral
+import os
 
 while (True):
+    os.system('cls' if os.name == 'nt' else 'clear')
     resposta = ''
     print('Programa de cálculo - média bimestral')
     nome_aluno = input('Digite seu nome: ')
