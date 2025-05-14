@@ -1,3 +1,7 @@
+# Imports
+
+import math
+
 # Exercício 01 - Elaborar um programa que solicita varias temperaturas em graus Celsius. Para cada temperatura inserida, o programa deve converter para graus Fahrenheit e Kelvin e mostrar na tela. O programa termina quanto a temperatura inserida for menor que -5
 
 print('\n========== EXERCICIO 01 ==========')
@@ -100,7 +104,15 @@ print('\n========== EXERCICIO 05 ==========')
 
 print('\n========== EXERCICIO 06 ==========')
 
+num_ex6 = int(input("Digite um número entre 10 a 15: "))
 
+while (num_ex6 >= 10 and num_ex6 <= 15):
+    raiz_quadrada = num_ex6 * num_ex6
+    print(f"A raiz quadrada deste número é: {raiz_quadrada}")
+    break
+
+if num_ex6 < 10 and num_ex6 > 15:
+    print("Número inválido!")
 
 # Exercício 07 - Elaborar um programa que contem uma lista com N elementos. Essa lista deve ser preenchida pelo usuário e só deve conter números inteiros positivos e pares. Caso o usuário digite o número 1 a repetição termina. Exibir no final todos os elementos da lista.
 
