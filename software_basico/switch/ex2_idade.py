@@ -1,4 +1,4 @@
-# Problema: Data a idade de um nadador, classifique-o em uma das categorias
+# Problema: Dada a idade de um nadador, classifique-o em uma das categorias
 # Data: 07/04/2025
 
 print("\n\n Categoria dos atletas \n\n")    

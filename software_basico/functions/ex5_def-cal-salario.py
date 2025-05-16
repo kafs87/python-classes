@@ -27,7 +27,7 @@ def triplo(parametro_num):
 titulo_do_sistema() # Título
 
 qtd_horas = int(input("Quantidade de horas da semana: ")) # Entrada
-valor_hora = int(input("Valor por hora (v/h): ")) # Entrada
+valor_hora = float(input("Valor por hora (v/h): ")) # Entrada
 
 # Sáida e Processamento
 print(f"\nO salário bruto é {calcular_pagamento(qtd_horas, valor_hora)}.") 
