@@ -2,11 +2,12 @@
 # Autor: Kauan Ferreira da Silva
 # Data: 13/05/2025
 
-# Bibliotecas
+# Importa a biblioteca 'os' para comandos do sistema (como limpar a tela)
 import os
 
-# Funções
+# Função que classifica o IMC com base na idade, sexo e valor do IMC
 def classificar_imc(idade, sexo, imc):
+    # Tabela com os valores de referência para IMC infantil por idade e sexo
     tabela_imc = {
         "feminino": {
             6:  (15.3, 17.1, 18.9),
@@ -38,9 +39,10 @@ def classificar_imc(idade, sexo, imc):
         }
     }
 
-    # Processamento
+    # Converte o sexo para minúsculo para evitar erro de comparação
     sexo = sexo.lower()
 
+    # Classificação para adultos (18 anos ou mais)
     if idade >= 18:
         if imc < 18.5:
             return "Abaixo do peso"
@@ -55,11 +57,14 @@ def classificar_imc(idade, sexo, imc):
         else:
             return "Obesidade grau 3"
     
+    # Verifica se a idade está fora da faixa da tabela infantil
     if idade < 6 or idade > 17:
         return "Idade fora da faixa (6 a 17 anos para IMC infantil)."
 
+    # Obtém os valores de referência (percentis) para o IMC infantil
     p50, p85, p97 = tabela_imc[sexo][idade]
 
+    # Classifica com base nos percentis
     if imc < p50:
         return "Abaixo do peso"
     elif imc < p85:
@@ -69,40 +74,51 @@ def classificar_imc(idade, sexo, imc):
     else:
         return "Obesidade"
 
-# Loop principal do cálculo
+# Loop principal do programa para calcular o IMC de múltiplas pessoas
 while True:
+    # Limpa o terminal antes de cada novo cálculo
     os.system('cls' if os.name == 'nt' else 'clear')
     try:
+        # Coleta o nome do usuário
         nome = input("Digite seu nome: ")
+        # Coleta e converte a idade para inteiro
         idade = int(input("Digite sua idade: "))
 
-        # Validação do sexo
+        # Validação do sexo: aceita apenas "masculino" ou "feminino"
         while True:
             sexo = input("Digite seu sexo (masculino ou feminino): ").strip().lower()
             if sexo in ["masculino", "feminino"]:
                 break
             print("Digite um sexo válido (masculino ou feminino).")
 
+        # Coleta e converte o peso (permite vírgula como separador decimal)
         peso = float(input("Digite seu peso em kg: ").replace(',', '.'))
+        # Coleta e converte a altura (permite vírgula como separador decimal)
         altura = float(input("Digite sua altura em metros: ").replace(',', '.'))
 
+        # Cálculo do IMC
         imc = peso / (altura ** 2)
+
+        # Exibe o resultado formatado com 2 casas decimais
         print(f"\nOlá {nome}! Seu IMC é: {imc:.2f}")
+        # Chama a função de classificação e exibe o resultado
         resultado = classificar_imc(idade, sexo, imc)
         print(f"Classificação: {resultado}\n")
 
+    # Captura erros caso o usuário insira valores inválidos
     except ValueError:
         print("Erro: Por favor, insira valores numéricos válidos.\n")
         input("Pressione Enter para tentar novamente...")
-        continue
+        continue  # Retorna ao início do loop principal
     
-    # Pergunta se deseja repetir
+    # Pergunta se o usuário deseja fazer outro cálculo
     while True:
         repetir = input("Deseja calcular novamente? (s/n): ").strip().lower()
         if repetir in ['s', 'sim']:
-            break  # Sai do loop e recomeça
+            break  # Reinicia o loop principal
         elif repetir in ['n', 'nao', 'não']:
             print("Encerrando o programa. Até mais!")
-            exit()
+            exit()  # Encerra o programa
         else:
             print("Resposta inválida. Digite 's' ou 'n'.")
+ 

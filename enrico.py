@@ -12,8 +12,6 @@
 
 # print(f'O salário final do {nome} é de: {salario_final:.2f}')
 
-
-
 # pai = input('Insira o nome do pai: ')
 # mae = input('Insira o nome da mãe: ')
 # nome_filho1 = input('Insira o nome do primeiro filho: ')
