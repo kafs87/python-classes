@@ -1,0 +1,1 @@
+#Exercício 3 - Elaborar um algoritmo que simule o jogo de adivinhação: o jogador 1 escolhe um número entre 1 e 10; o jogador 2 insere números na tentativa de acertar o número escolhido pelo jogador 1. Quando ele acertar, o algoritmo deve informar que ele acertou o número escolhido pelo jogador 1 em x tentativas (quantidade de tentativas do jogador 2)
