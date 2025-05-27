@@ -1,7 +1,7 @@
 # Clínica
 # Módulo: Pacientes
 # 26/05/2025
-# Autor: ti é midia
+# Autor: Kauan Ferreira
 
 pacientes = {} #chave: identificador (id) -> pacientes{"id": id, "nome": nome, "celular": celular}
 
@@ -41,13 +41,6 @@ def consultar_geral():
     for id in pacientes:
         print(pacientes[id].get('id'), "-", pacientes[id].get('nome'), "-", pacientes[id].get('telefone'),  "-", pacientes[id].get('email'))
 
-def consultar_especifica():
-    print('\n--- Consulta geral do Paciente ---\n')
-    print('Id | Nome | Número de telefone | E-mail')
-    print('-' * 40)
-    for id in pacientes:
-        print(pacientes[id].get('id'), "-", pacientes[id].get('nome'), "-", pacientes[id].get('telefone'),  "-", pacientes[id].get('email'))
-
 def excluir():
     print('\n--- Exclusão de Paciente ---\n')
     id = int(input('Identificador do Paciente: '))
@@ -72,43 +65,30 @@ def excluir():
 
 def alterar():
     print('\n--- Alteração de Paciente ---\n')
-    id = int(input('Identificador do paciente: \n'))
+    id = int(input('Identificador do paciente: '))
 
-    # Consultar para alterar
     if id in pacientes:
-        id = pacientes[id] = {"id": id}
-        nome = pacientes[id] = {"nome": nome}
-        telefone = pacientes[id] = {"telefone": telefone}
-        email = pacientes[id] = {"email": email}
+        paciente = pacientes[id]
 
-        # Mostra o paciente
-        consultar_geral()
+        print(f"\nPaciente atual:\nID: {paciente['id']}\nNome: {paciente['nome']}\nTelefone: {paciente['telefone']}\nEmail: {paciente['email']}\n")
 
-        id = id
-
-        resposta = input('Deseja alterar o nome? (s/n):').strip().lower()
+        resposta = input('Deseja alterar o nome? (s/n): ').strip().lower()
         if resposta in ['s', 'sim']:
-            nome = input('Nome: ')
-            pacientes[id] = {"nome": nome}
-            
-        resposta = input('Deseja alterar o telefone? (s/n):')
+            paciente['nome'] = input('Novo nome: ')
+
+        resposta = input('Deseja alterar o telefone? (s/n): ').strip().lower()
         if resposta in ['s', 'sim']:
-            telefone = input('Número de telefone: ')
-            pacientes[id] = {"telefone": telefone}
+            paciente['telefone'] = input('Novo telefone: ')
 
-        resposta = input('Deseja alterar o e-mail? (s/n):')
+        resposta = input('Deseja alterar o e-mail? (s/n): ').strip().lower()
         if resposta in ['s', 'sim']:
-            email = input('E-mail: ')
-            pacientes[id] = {"email": email}
+            paciente['email'] = input('Novo e-mail: ')
 
-        pacientes[id] = {
-        "id": id, 
-        "nome": nome, 
-        "telefone": telefone,
-        "email": email
-        } 
+        pacientes[id] = paciente  # Atualiza o dicionário
+        print(f'\nPaciente {id} alterado com sucesso!')
 
-    else: 
+    else:
         print(f'Paciente {id} não encontrado.')
+
 
     
