@@ -100,13 +100,16 @@ print('\n========== EXERCICIO 05 ==========')
 
 num_ex5 = None
 while True:
-    num_ex5 = int(input('Digite um número mais que 2: '))
+    num_ex5 = int(input('Digite um número maior que 2: '))
     if num_ex5 < 2:
         print('Número inválido. Digite um número maior que 2.')
     else: 
         break
 
-quadrado_ex5 = num_ex5 * num_ex5
+for i in range(2, num_ex5+1):
+    quadrado_ex5 = i ** 2
+    cubo_ex5 = i ** 3
+    print(f'Número: {i} | Quadrado: {quadrado_ex5} | Cubo: {cubo_ex5}')
 
 # Exercício 06 - Elaborar um programa que solicita um número (entre 10 a 15). Se o usuário digitar um número diferente, o programa deve mostrar a mensagem “Entrada inválida” e solicitar um número novamente. Se digitar correto o programa deve mostrar a raiz quadrada desse número e termina
 
